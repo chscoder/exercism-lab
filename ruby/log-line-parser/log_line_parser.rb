@@ -15,9 +15,7 @@ class LogLineParser
   end
 
   def reformat
-    reformat_log = "(" + parse_line(@line.delete "[]:").log.downcase + ")"
-    
-    parse_line(@line.delete "[]:").msg.strip + " " + reformat_log
+    "#{parse_line(@line.delete "[]:").msg.strip} #{'(' + parse_line(@line.delete "[]:").log.downcase + ')'}"
   end
 
   private 
